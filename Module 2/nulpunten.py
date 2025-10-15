@@ -13,6 +13,7 @@ def nulpunten(a, b, c):
 	if D == 0:
 		return [(-b) / (2 * a)]
 	elif D < 0:
+		print("Deze functie heeft geen nulpunten.")
 		return []
 	elif D > 0:
 		return [(-b + math.sqrt(D)) / (2 * a), (-b - math.sqrt(D)) / (2 * a)]
@@ -21,7 +22,7 @@ def nulpunten(a, b, c):
 x_coords = numpy.arange(-6, 5, 0.01)
 y_coords = []
 
-for x in numpy.arange(-6, 5, 0.01):
+for x in x_coords:
 	y_coords.append(f(x))
 
 plt.plot(x_coords, y_coords, "b-")
