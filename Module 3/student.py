@@ -43,12 +43,13 @@ ax.set_aspect('equal')
 ax.grid(True, alpha=0.3)
 ax.set_xlabel('x-positie')
 ax.set_ylabel('y-positie')
-ax.set_title('Random Walk van Twee Dronken Studenten')
 
 ax.plot([0], [0], 'k*', markersize=15, label='Start')
 
-lijn_student1, = ax.plot([], [], 'b-', alpha=0.3, linewidth=0.5, label='Student 1 traject')
-lijn_student2, = ax.plot([], [], 'r-', alpha=0.3, linewidth=0.5, label='Student 2 traject')
+lijn_student1, = ax.plot([], [], 'b-', alpha=0.3, linewidth=0.5,
+                         label='Student 1 traject')
+lijn_student2, = ax.plot([], [], 'r-', alpha=0.3, linewidth=0.5,
+                         label='Student 2 traject')
 punt_student1, = ax.plot([], [], 'bo', markersize=10, label='Student 1')
 punt_student2, = ax.plot([], [], 'ro', markersize=10, label='Student 2')
 verbindingslijn, = ax.plot([], [], 'g--', linewidth=2, label='Verbinding')

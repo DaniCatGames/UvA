@@ -9,7 +9,7 @@ def worp_met_twee_dobbelstenen():
 	return dobbelsteen1 + dobbelsteen2
 
 
-def simuleer_potje_monopoly(startgeld_speler=None):
+def simuleer_potje_monopoly(startgeld_speler):
 	bord_waardes = [0, 60, 0, 60, 0, 200, 100, 0, 100, 120,
 	                0, 140, 150, 140, 160, 200, 180, 0, 180, 200,
 	                0, 220, 0, 220, 240, 200, 260, 260, 150, 280,
@@ -32,14 +32,13 @@ def simuleer_potje_monopoly(startgeld_speler=None):
 
 		positie = (positie + worp) % 40
 
-		if geld is not None and positie < vorige_positie:
+		if positie < vorige_positie:
 			geld += 200
 
 		# als te koop en niet gekocht en genoeg geld koop
 		if bord_waardes[positie] > 0 and bezittingen[positie] == 0:
-			if geld is None or geld >= bord_waardes[positie]:
-				if geld is not None:
-					geld -= bord_waardes[positie]
+			if geld >= bord_waardes[positie]:
+				geld -= bord_waardes[positie]
 
 				bezittingen[positie] = 1
 				aantal_in_bezit += 1
@@ -84,8 +83,10 @@ def simuleer_groot_aantal_potjes_monopoly(aantal_potjes, startgeld_speler=None):
 	if startgeld_speler is None:
 		print(f"\nMonopoly simulator: 1 speler, miljardair-modus")
 	else:
-		print(f"\nMonopoly simulator: 1 speler, {startgeld_speler} euro startgeld, {aantal_potjes} potjes")
-	print(f"Gemiddeld duurde het {gemiddelde:.1f} worpen voor de speler alle straten in zijn bezit had")
+		print(
+			f"\nMonopoly simulator: 1 speler, {startgeld_speler} euro startgeld, {aantal_potjes} potjes")
+	print(
+		f"Gemiddeld duurde het {gemiddelde:.1f} worpen voor de speler alle straten in zijn bezit had")
 
 	return gemiddelde
 

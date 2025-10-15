@@ -17,7 +17,6 @@ def basejump():
 	v_zonder = [0]
 	h_zonder = [h_start]
 
-	tijd_parachute_met = None
 	while h_met[-1] > h_parachute:
 		v_huidig = v_met[-1]
 		a = g - (k * v_huidig ** 2) / m
@@ -51,19 +50,17 @@ def basejump():
 	plt.plot(t_met, v_met_kmh, 'b-', linewidth=2)
 	plt.xlabel('tijd (s)')
 	plt.ylabel('v (km/u)')
-	plt.title('Snelheid als functie van tijd (met luchtweerstand)')
 	plt.grid(True, alpha=0.3)
 
 	plt.subplot(1, 2, 2)
-	plt.plot(t_zonder, h_zonder, 'g-', linewidth=2, label='zonder luchtweerstand')
-	plt.plot(t_met, h_met, 'b-', linewidth=2, label='met luchtweerstand')
+	plt.plot(t_zonder, h_zonder, 'g-', label="zonder")
+	plt.plot(t_met, h_met, 'b-', label="met")
 	plt.xlabel('tijd (s)')
 	plt.ylabel('hoogte (m)')
-	plt.title('Hoogte als functie van tijd')
-	plt.legend()
 	plt.grid(True, alpha=0.3)
 
 	plt.tight_layout()
+	plt.legend()
 	plt.savefig('basejump_grafieken.png', dpi=150)
 	plt.show()
 

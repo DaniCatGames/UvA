@@ -68,10 +68,12 @@ def simuleer_potje_monopoly(startgeld_speler_1, startgeld_speler_2):
 	return aantal_straten_speler_1 - aantal_straten_speler_2
 
 
-def simuleer_groot_aantal_potjes_monopoly(aantal_potjes, startgeld_speler_1, startgeld_speler_2):
+def simuleer_groot_aantal_potjes_monopoly(aantal_potjes, startgeld_speler_1,
+                                          startgeld_speler_2):
 	resultaten = []
 
-	print(f"Monopoly simulator: twee spelers, startgeld [{startgeld_speler_1},{startgeld_speler_2}]")
+	print(
+		f"Monopoly simulator: twee spelers, startgeld [{startgeld_speler_1},{startgeld_speler_2}]")
 	print(f"We simuleren {aantal_potjes} potjes...")
 
 	for potje in range(aantal_potjes):
@@ -105,7 +107,7 @@ def evenwicht():
 	aantal_potjes = 10000
 
 	extra_waardes = [0, 50, 100, 150, 200]
-	resultaten = {}
+	resultaten = { }
 
 	for extra in extra_waardes:
 		startgeld_speler_2 = startgeld_speler_1 + extra
@@ -129,7 +131,7 @@ def evenwicht():
 		# zoek welke om 0 zitten
 		if delta_laag > 0 > delta_hoog:
 			evenwicht_schatting = (extra_laag + extra_hoog) // 2
-			break
+			break  # break is fucking peak
 
 	print(f"Monopoly simulator: 2 spelers")
 	print(f"Als we speler 2 {evenwicht_schatting} euro meer startgeld meegeven "

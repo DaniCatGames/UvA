@@ -1,10 +1,8 @@
 def appel():
 	g = 9.81
-	h_start = 100
 	dt = 0.01
-	v_doel = 100 / 3.6
 
-	x = h_start
+	x = 100
 	v = 0
 	t = 0
 
@@ -15,7 +13,7 @@ def appel():
 
 		v_nieuw = v + a * dt
 
-		if tijd_100kmh is None and v_nieuw >= v_doel:
+		if tijd_100kmh is None and v_nieuw >= 100 / 3.6:
 			tijd_100kmh = t
 
 		x_nieuw = x - v_nieuw * dt
@@ -27,7 +25,8 @@ def appel():
 	snelheid_grond_kmh = v * 3.6
 
 	print(f"{t:.2f} s tot de appel de grond raakt")
-	print(f"{snelheid_grond_kmh:.1f} km/uur is de snelheid waarmee de appel de grond raakt")
+	print(
+		f"{snelheid_grond_kmh:.1f} km/uur is de snelheid waarmee de appel de grond raakt")
 	print(f"{tijd_100kmh:.2f} s duurt het tot de appel 100 km/uur gaat")
 
 
