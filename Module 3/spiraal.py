@@ -4,13 +4,6 @@ import numpy
 plt.figure()
 ax = plt.gca()
 
-ax.set_aspect('equal')
-
-ax.set_xlim(-12, 12)
-ax.set_ylim(-12, 12)
-
-ax.grid(True, alpha=0.3)
-
 alpha = 0
 while alpha <= 20:
 	R = 10 - 0.5 * alpha
